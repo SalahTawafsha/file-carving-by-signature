@@ -13,7 +13,7 @@ def save_file(file_entry, output_dir):
     file_size = file_entry.info.meta.size
     file_data = file_entry.read_random(0, file_size)
 
-    output_path = output_dir + '/' + str(entry.info.name.name)[2:-1]
+    output_path = output_dir + '\\' + str(entry.info.name.name)[2:-1]
     with open(output_path, 'wb') as output_file:
         output_file.write(file_data)
 
