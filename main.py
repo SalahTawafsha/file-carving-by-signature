@@ -37,7 +37,8 @@ root_directory = ad1_fs.open_dir(path='/')
 # List all files and directories in the root directory
 for entry in root_directory:
     # print entry name
-    if hasattr(entry.info.meta, "type") and entry.info.meta.type == pytsk3.TSK_FS_META_TYPE_REG and entry.info.meta.size > 0:
+    if hasattr(entry.info.meta,
+               "type") and entry.info.meta.type == pytsk3.TSK_FS_META_TYPE_REG and entry.info.meta.size > 0:
         # Check if the file has the desired signature
         if has_signature(entry):
             # Save the matching file to disk
