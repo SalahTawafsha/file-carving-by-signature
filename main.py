@@ -1,6 +1,5 @@
 import pytsk3
 
-
 # Function to check if a file has a specific signature
 def has_signature(file_entry):
     file_data = file_entry.read_random(0, len(signature))
@@ -44,4 +43,4 @@ for entry in root_directory:
         if has_signature(entry):
             # Save the matching file to disk
             save_file(entry, output_directory)
-            print(f'PDF found and saved in: docs/{str(entry.info.name.name)[2:-1]}')
+            print(f'docs found and saved in: docs/{str(entry.info.name.name)[2:-1]}')
