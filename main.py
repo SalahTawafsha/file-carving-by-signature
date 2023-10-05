@@ -18,14 +18,16 @@ def save_file(file_entry, output_dir):
         output_file.write(file_data)
 
 
-ad1_file_path = "D:\\folder_image\\forensic.001"  # Replace with the actual path to the .ad1 file
+# disk image path
+disk_image_path = "D:\\folder_image\\forensic.001"
 
-# Open the .ad1 file as a handle
-ad1_handle = pytsk3.Img_Info(ad1_file_path)
+# Open the image file as a handle
+image_handle = pytsk3.Img_Info(disk_image_path)
 
-# Open the .ad1 file system
-ad1_fs = pytsk3.FS_Info(ad1_handle)
+# Open the image file system
+ad1_fs = pytsk3.FS_Info(image_handle)
 
+# select file signature that we want to get all files that has it
 signature = b'\x50\x4B\x03\x04'
 
 # Output directory to save the matching files
